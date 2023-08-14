@@ -41,7 +41,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
 
 <script>
-let setsData = [];
+let setsData = [0,0,0,0,0,0,0,0,0,0,0,0,0];
 
 const calcMax = function(setData) {
   const temps = setData;
@@ -61,8 +61,11 @@ fetch(`{{ url('dashboard/diagramProfit') }}`)
   return response.json();
 })
 .then(function(response) {
-  response.data.map(function (data) {
-    setsData.push(data.dataprofit);
+  response.data.map(function (data, index) {
+    const bulan = data.bulan - 1;
+    setsData[bulan] = data.dataprofit;
+
+    console.log(setsData);
   })
 
   updateDiagram();
