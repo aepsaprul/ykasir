@@ -22,7 +22,7 @@
           @foreach($transaksis as $key => $item)
             <tr>
               <td class="text-center">{{ $key + 1 }}</td>
-              <td>{{ $item->created_at->format('d/m/Y') }}</td>
+              <td><a href="{{ route('transaksi.show', [$item->id]) }}" class="text-decoration-none">{{ $item->created_at->format('d/m/Y') }}</a></td>
               <td>{{ $item->nomor_transaksi }}</td>
               <td class="text-center">{{ $item->total_qty }}</td>
               <td class="text-end">{{ rupiah($item->total_harga) }}</td>

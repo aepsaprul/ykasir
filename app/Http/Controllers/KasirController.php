@@ -50,6 +50,7 @@ class KasirController extends Controller
       $transaksi_detail = new TransaksiDetail;
       $transaksi_detail->transaksi_id = $transaksi->id;
       $transaksi_detail->barang_id = $item->barangId;
+      $transaksi_detail->nama_barang = $barang->nama;
       $transaksi_detail->qty = $item->qty;
       $transaksi_detail->harga = str_replace(".","", $item->harga) * $item->qty;
       $transaksi_detail->profit = ($barang->harga_jual - $barang->harga_beli) * $item->qty;

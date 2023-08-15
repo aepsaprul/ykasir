@@ -50,6 +50,7 @@ Route::middleware(['auth'])->group(function () {
   
   // transaksi
   Route::get('transaksi', [TransaksiController::class, 'index'])->name('transaksi');
+  Route::get('transaksi/{id}/show', [TransaksiController::class, 'show'])->name('transaksi.show');
   
   // logout
   Route::post('login/logout', [LoginController::class, 'logout'])->name('logout');

@@ -4,7 +4,17 @@
 
 @section('content')
 <div class="container-fluid px-4">
-  <h3 class="my-4">Tambah Data Barang</h3>
+  <div class="d-flex justify-content-between">
+    <div>
+      <h3 class="my-4">Tambah Data Barang</h3>
+    </div>
+    <div class="mt-4">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{{ route('barang') }}" class="text-decoration-none">Barang</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Tambah Data</li>
+      </ol>
+    </div>
+  </div>
   <div class="row">
     <div class="col-12">
       <form action="{{ route('barang.store') }}" method="post">

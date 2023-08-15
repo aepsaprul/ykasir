@@ -61,7 +61,7 @@
             <div>
               <div class="d-flex justify-content-between align-items-center mb-2">
                 <div class="me-4">Total</div>
-                <div><input type="text" name="total" id="total" class="form-control form-control-sm text-end" value="0"></div>
+                <div><input type="text" name="total" id="total" class="form-control form-control-sm text-end" value="0" readonly></div>
               </div>
               <div class="d-flex justify-content-between align-items-center mb-2">
                 <div class="me-4">Bayar</div>
