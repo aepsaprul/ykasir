@@ -206,12 +206,18 @@
       item.addEventListener('click', function (e) {
         e.preventDefault();
         tableBody.innerHTML = "";
+
         const dataId = this.getAttribute('data-id');
         const tabelJumlah = tabel[dataId].jumlah.replace(/[^,\d]/g, "");
         const calcTotal = Number(total.value.replace(/[^,\d]/g, "")) - Number(tabelJumlah);
+
         total.value = rupiahJs(calcTotal);
         tabel.splice(dataId, 1);
         loadTable();
+
+        totalQtyArr.splice(dataId, 1);
+        const totalQtyInitial = 0;
+        totalQty = totalQtyArr.reduce((accumulator, currentValue) => Number(accumulator) + Number(currentValue), totalQtyInitial);
       })
     })
   }
